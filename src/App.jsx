@@ -7,6 +7,7 @@ import Projects from './components/Projects/Projects';
 import Contact from './components/Contact/Contact';
 import './styles/global.css';
 
+
 function App() {
   useEffect(() => {
     // Smooth scrolling offset for fixed header
@@ -20,6 +21,7 @@ function App() {
     
     return () => {
       document.head.removeChild(style);
+      document.documentElement.style.scrollBehavior = "smooth";
     };
   }, []);
 

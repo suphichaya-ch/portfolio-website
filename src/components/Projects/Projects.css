@@ -1,0 +1,29 @@
+/* Project card hover */
+.project-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Contact button hover */
+.btn-submit {
+  transition: transform 0.3s, background-color 0.3s;
+}
+.btn-submit:hover {
+  transform: scale(1.05);
+  background-color: #4338ca;
+}
+
+/* Input focus */
+input:focus, textarea:focus {
+  border-color: #4f46e5;
+  outline: none;
+}
+.spinner {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 2rem;
+  color: #4f46e5;
+}
