@@ -3,7 +3,7 @@ function ProjectCard({ project }) {
   return (
     <div className="project-card">
       {/* ใส่รูปตรงนี้ */}
-      <img src={project.image}  className="project-image" />
+      <img src={project.image} alt={project.title} />
       <h3>{project.title}</h3>
       <p>{project.description}</p>
       

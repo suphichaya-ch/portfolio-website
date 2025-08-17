@@ -1,39 +1,35 @@
-// src/App.jsx
-import { useEffect } from 'react';
-import { ThemeProvider } from './contexts/ThemeContext';
-import Header from './components/Header/Header';
-import About from "./components/About/About";
-import Projects from './components/Projects/Projects';
-import Contact from './components/Contact/Contact';
-import './styles/global.css';
+import React from "react";
+import { projects } from "./data/portfolioData";
 
 function App() {
-  useEffect(() => {
-    // Smooth scrolling offset for fixed header
-    const style = document.createElement('style');
-    style.innerHTML = `
-      html {
-        scroll-padding-top: 80px;
-      }
-    `;
-    document.head.appendChild(style);
-    
-    return () => {
-      document.head.removeChild(style);
-    };
-  }, []);
+  console.log(projects); // เช็คว่ามี data จริงหรือไม่
 
   return (
-    <ThemeProvider>
-      <div className="App">
-        <Header />
-        <main>
-          <About />
-          <Projects />
-          <Contact />
-        </main>
+    <div style={{ padding: "20px", backgroundColor: "#f0f0f0", color: "#000" }}>
+      <h1>My Projects</h1>
+      <div>
+        {projects.map((project) => (
+          <div key={project.id} style={{ marginBottom: "30px" }}>
+            <h2>{project.title}</h2>
+            <p>{project.description}</p>
+            {project.image && (
+              <img
+                src={project.image}
+                alt={project.title}
+                style={{ width: "200px", display: "block" }}
+              />
+            )}
+            {project.link && (
+              <p>
+                <a href={project.link} target="_blank" rel="noopener noreferrer">
+                  View Project
+                </a>
+              </p>
+            )}
+          </div>
+        ))}
       </div>
-    </ThemeProvider>
+    </div>
   );
 }
 
