@@ -10,7 +10,7 @@ export const projects = [
     technologies: ["Portfolio Website"],
     link: "https://htmlpreview.github.io/?https://github.com/BorwonratSE/portfolio-website/blob/main/index.html",
     image: projectImg, // ใช้ import แทน path string
-    github: "https://github.com/BorwonratSE/portfolio-website/tree/main"
+    github: "https://github.com/suphichaya-ch/portfolio-website.git"
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ export const projects = [
     technologies: ["Weather App"],
     link: "https://htmlpreview.github.io/?https://github.com/BorwonratSE/my-weather-app/blob/main/index.html",
     image: weatherImg, // ใช้ import แทน path string
-    github: ""
+    github: "https://github.com/suphichaya-ch/portfolio-website.git"
   },
   {
     id: 3,
