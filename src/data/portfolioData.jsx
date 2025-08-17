@@ -1,23 +1,31 @@
+import blenderImg from '../images/blender.png';
+import projectImg from '../images/intro.png';
+import weatherImg from '../images/weather.png'; 
+
 export const projects = [
   {
     id: 1,
     title: "Portfolio Website",
-    image: "/assets/images/project1.png",
-    githubLink: "https://github.com/username/portfolio-website",
-    liveLink: "https://username.github.io/portfolio-website/",
+    description: "Intro",
+    technologies: ["Portfolio Website"],
+    link: "https://htmlpreview.github.io/?https://github.com/BorwonratSE/portfolio-website/blob/main/index.html",
+    image: projectImg, // ใช้ import แทน path string
+    github: "https://github.com/BorwonratSE/portfolio-website/tree/main"
   },
   {
     id: 2,
-    title: "Todo App",
-    image: "/assets/images/project2.png",
-    githubLink: "https://github.com/username/todo-app",
-    liveLink: "https://username.github.io/todo-app/",
+    title: "Weather App",
+    description: "Real-time weather application with location-based forecasts",
+    technologies: ["Weather App"],
+    link: "https://htmlpreview.github.io/?https://github.com/BorwonratSE/my-weather-app/blob/main/index.html",
+    image: weatherImg, // ใช้ import แทน path string
+    github: ""
   },
   {
     id: 3,
-    title: "Weather App",
-    image: "/assets/images/project3.png",
-    githubLink: "https://github.com/username/weather-app",
-    liveLink: "https://username.github.io/weather-app/",
-  },
+    title: "Blender",
+    description: "3D Model",
+    image: blenderImg, // ใช้ import แทน path string
+    technologies: ["Blender"],
+  }
 ];
