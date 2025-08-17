@@ -1,7 +1,20 @@
-// src/components/Projects/Projects.jsx - Template
-import './Projects.css';
+import React, { useState } from "react";
+import ProjectCard from "./ProjectCard";
+import { projects } from "../../data/portfolioData";
+import "./Projects.css";
 
 function Projects() {
+  const [filter, setFilter] = useState("All");
+
+  // Filtered projects
+  const filteredProjects =
+    filter === "All"
+      ? projects
+      : projects.filter((project) => project.tech === filter);
+
+  // Technology options
+  const techOptions = ["All", ...new Set(projects.map((p) => p.tech))];
+
   return (
     <section id="projects" className="projects section">
       <div className="container">
@@ -9,12 +22,31 @@ function Projects() {
         <p className="section-subtitle">
           Here are some of the projects I've worked on recently.
         </p>
-        
-        {/* TODO: นักศึกษาเพิ่ม project list ที่นี่ */}
+
+        {/* Filter */}
+        <div className="projects-filter">
+          {techOptions.map((tech) => (
+            <button
+              key={tech}
+              className={filter === tech ? "active" : ""}
+              onClick={() => setFilter(tech)}
+            >
+              {tech}
+            </button>
+          ))}
+        </div>
+
+        {/* Grid */}
         <div className="projects-grid">
-          <div className="project-placeholder">
-            <p>Add your projects here</p>
-          </div>
+          {filteredProjects.map((project) => (
+            <ProjectCard
+              key={project.id}
+              title={project.title}
+              image={project.image}
+              githubLink={project.githubLink}
+              liveLink={project.liveLink}
+            />
+          ))}
         </div>
       </div>
     </section>
